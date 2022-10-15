@@ -1,0 +1,76 @@
+import { App } from 'vue' //引入app类型
+import { Icon } from 'element-ui' //element-plus已不支持icon设置样式生效，引入
+import {
+  ElButton,
+  ElAside,
+  ElForm,
+  ElFormItem,
+  ElInput,
+  ElRadio,
+  ElAlert,
+  ElIcon,
+  ElMenu,
+  ElSubMenu,
+  ElMenuItem,
+  ElBreadcrumb,
+  ElDropdown,
+  ElDropdownMenu,
+  ElDropdownItem,
+  ElAvatar,
+  ElRow,
+  ElCol,
+  ElSelect,
+  ElOption,
+  ElDatePicker,
+  ElTable,
+  ElTableColumn,
+  ElConfigProvider,
+  ElImage,
+  ElDialog,
+  ElTree,
+  ElCard,
+  ElMessage,
+  ElDescriptions,
+  ElDescriptionsItem,
+  ElTag
+} from 'element-plus'
+const components = [
+  ElButton,
+  ElAside,
+  ElForm,
+  ElFormItem,
+  ElInput,
+  ElRadio,
+  ElAlert,
+  ElIcon,
+  ElMenu,
+  ElSubMenu,
+  ElMenuItem,
+  Icon,
+  ElBreadcrumb,
+  ElDropdown,
+  ElDropdownMenu,
+  ElDropdownItem,
+  ElAvatar,
+  ElRow,
+  ElCol,
+  ElSelect,
+  ElOption,
+  ElDatePicker,
+  ElTable,
+  ElTableColumn,
+  ElConfigProvider,
+  ElImage,
+  ElDialog,
+  ElTree,
+  ElCard,
+  ElDescriptions,
+  ElDescriptionsItem,
+  ElTag
+]
+
+export function registerApp(app: App) {
+  for (const component of components) {
+    app.component(component.name, component)
+  }
+}

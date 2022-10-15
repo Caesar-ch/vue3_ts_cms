@@ -1,0 +1,11 @@
+.output.js
+/node_modules/**
+# **/*.md
+**/*.svg
+**/*.sh
+# **/*.html
+/public/*
+# package.json
+# .umi
+# .umi-production
+# .umi-test

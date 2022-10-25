@@ -2,23 +2,23 @@ const dependencies = {
   descriptionList: [
     {
       name: 'vue',
-      description: '^3.0.5'
+      description: '^3.2.13'
     },
     {
       name: 'vue-router',
-      description: '^4.0.6'
+      description: '^4.1.5'
     },
     {
       name: 'vuex',
-      description: '^4.0.0'
+      description: '^4.0.2'
     },
     {
       name: 'axios',
-      description: '^0.21.1'
+      description: '^0.27.2'
     },
     {
       name: 'element-plus',
-      description: '^1.0.2-beta.41'
+      description: '^2.2.17'
     },
 
     {
@@ -28,7 +28,7 @@ const dependencies = {
 
     {
       name: 'less',
-      description: '^4.1.1'
+      description: '^4.0.0'
     },
     {
       name: 'scss',
@@ -36,7 +36,7 @@ const dependencies = {
     },
     {
       name: 'EChart',
-      description: '^5.1.1'
+      description: '^5.4.0'
     },
 
     {
@@ -56,8 +56,8 @@ const dependencies = {
       description: '^2.0.0-alpha.13'
     },
     {
-      name: 'wangeditor',
-      description: '^4.6.17'
+      name: 'bytemd',
+      description: '^1.17.2'
     }
   ],
   column: 2,

@@ -27,16 +27,26 @@ app.mount('#app')
 
 //可用的接口
 // import axios from 'axios'
-// axios.defaults.baseURL = 'http://localhost:8080/'
+// axios.defaults.baseURL = ' http://localhost:8080'
+// axios.defaults.baseURL = '/api'
 // axios
-//   .post('recommend_api/v1/article/recommend_all_feed', {
-//     aid: 2608,
-//     uuid: 6973652585686205982,
-//     spider: 0
-//   })
-//   .then((res) => {
-//     console.log(res)
-//   })
+// .post('/api/register', {
+//   account: '15580774982',
+//   mobile: '15580774982',
+//   code: 123456,
+//   password: 1234567
+// })
+// .get('/register/code', {
+// params: { mobile: 15580774982 }
+// })
+// .then((res) => {
+//   console.log(res)
+
+//   console.log(JSON.parse(res as unknown as string))
+// })
+// .catch((err) => {
+//   console.log(err)
+// })
 // axios
 //   .post('http://152.136.185.210:5000/login', {
 //     name: 'coderwhy',

@@ -27,9 +27,7 @@
         <ChCard tittle="收藏">
           <BarEcharts :data="categoryGoodsFavor"></BarEcharts>
         </ChCard>
-
       </el-col>
-
     </el-row>
   </div>
 </template>
@@ -88,7 +86,6 @@ export default defineComponent({
     })
 
     return {
-
       categoryGoodsCount,
       categoryGoodsSale,
       categoryGoodsFavor,
@@ -98,6 +95,4 @@ export default defineComponent({
 })
 </script>
 
-<style scoped>
-
-</style>
+<style scoped></style>

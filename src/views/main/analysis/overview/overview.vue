@@ -1,8 +1,10 @@
 <template>
-  <div class=" overview">
+  <div class="overview">
     <ChCard tittle="关于">
       <span>
-        <b>VueTsCMS</b> 是基于<b>Vue3、Vuex、VueRouter、VueCLI、 ElementPlus 、TypeScript、Echart5 </b>等后台系统解决方案。
+        <b>VueTsCMS</b> 是基于<b
+          >Vue3、Vuex、VueRouter、VueCLI、 ElementPlus 、TypeScript、Echart5 </b
+        >等后台系统解决方案。
       </span>
     </ChCard>
     <ChCard tittle="技术栈">
@@ -15,7 +17,7 @@
     </ChCard>
 
     <ChCard tittle="结构树">
-      <pre>{{ treeConfig}}</pre>
+      <pre>{{ treeConfig }}</pre>
     </ChCard>
     <ChCard tittle="项目规范">
       <ChDescription v-bind="filenameStandard"></ChDescription>
@@ -39,13 +41,13 @@ export default defineComponent({
     ChCard
   },
   setup() {
-
-
     return {
       dependenciesConfig,
       treeConfig,
       technologyConfig,
-      filenameStandard, commitStandard, componentStandard
+      filenameStandard,
+      commitStandard,
+      componentStandard
     }
   }
 })

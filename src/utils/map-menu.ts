@@ -50,6 +50,8 @@ export function pathMapToMenu(
   breadcrumbs?: IBreadcrumb[]
 ): any {
   for (const menu of userMenus) {
+    console.log('cccccccccccccccccccc')
+
     if (menu.type === 1) {
       const findMenu = pathMapToMenu(menu.children, currentPath)
       if (findMenu) {

@@ -1,7 +1,6 @@
 <template>
   <div>
-    <div ref="myEcharts" style="width:100%;height:300px">
-    </div>
+    <div ref="myEcharts" style="width: 100%; height: 300px"></div>
   </div>
 </template>
 
@@ -27,7 +26,6 @@ export default defineComponent({
       })
     })
 
-
     return {
       myEcharts
     }
@@ -35,6 +33,4 @@ export default defineComponent({
 })
 </script>
 
-<style scoped>
-
-</style>
+<style scoped></style>

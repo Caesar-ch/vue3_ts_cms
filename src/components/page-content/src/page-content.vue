@@ -7,24 +7,26 @@
       </template>
       <template #status="scope">
         <template v-if="scope.row.status">
-          <el-button plain :type="scope.row.status?'success':'danger'"> {{scope.row.status ? '启用':'禁用'}}
+          <el-button plain :type="scope.row.status ? 'success' : 'danger'">
+            {{ scope.row.status ? '启用' : '禁用' }}
           </el-button>
         </template>
         <template v-else>
-          <el-button plain :type="scope.row.enable?'success':'danger'"> {{scope.row.enable ? '启用':'禁用'}}
+          <el-button plain :type="scope.row.enable ? 'success' : 'danger'">
+            {{ scope.row.enable ? '启用' : '禁用' }}
           </el-button>
         </template>
       </template>
       <template #createAt="scope">
-        {{$filters.formatTime(scope.row.createAt)}}
+        {{ $filters.formatTime(scope.row.createAt) }}
       </template>
       <template #updateAt="scope">
-        {{$filters.formatTime(scope.row.updateAt)}}
+        {{ $filters.formatTime(scope.row.updateAt) }}
       </template>
       <template #editFn="scope">
         <div class="btn-edit-delete">
-          <el-button v-if="isDelete" size="small" type="primary" @click="handleDeleteClick(scope.row)" text bg> <i
-              class="el-icon-delete"></i> 删除
+          <el-button v-if="isDelete" size="small" type="primary" @click="handleDeleteClick(scope.row)" text bg>
+            <i class="el-icon-delete"></i> 删除
           </el-button>
           <el-button v-if="isUpdate" size="small" type="primary" @click="handleEditClick(scope.row)" ext bg><i
               class="el-icon-edit"></i> 编辑</el-button>
@@ -32,9 +34,14 @@
       </template>
 
       <template v-for="item in otherPropSlots" :key="item.prop" #[item.slotName]="scope">
-        <slot :name="item.slotName" :row="scope.row">
-        </slot>
+        <slot :name="item.slotName" :row="scope.row"> </slot>
       </template>
+      <!-- <template #image="scope">//写在这里就不合理，因为大多数组件使用这个组件没有这个需求，写在这里不合适，特殊的应是上面的写法，动态在生产插槽暴露给使用的组件，使用的组件可以根据需要穿进去特殊的处理值
+        <el-image style="width: 60px; height: 60px" :src="scope.row.imgUrl" />
+      </template>
+      <template #newPrice="scope">
+        {{ '￥' + scope.row.newPrice }}
+      </template> -->
     </Chtable>
   </div>
 </template>
@@ -69,7 +76,9 @@ export default defineComponent({
     const isQuery = usePermission(props.pageName, 'query')
     //分也器数据
     const pageData = ref({ pageSize: 10, currentPage: 1 })
-    watch(pageData, () => { getPageData() })
+    watch(pageData, () => {
+      getPageData()
+    })
 
     //发送数据，并保存在vuex里
     const getPageData = (queryInfos: any = {}) => {
@@ -86,7 +95,7 @@ export default defineComponent({
       })
     }
     getPageData()
-    console.log('取数据');
+    console.log('取数据')
 
     //从vuex里拿到数据
     const tableData = computed(() => {
@@ -95,7 +104,7 @@ export default defineComponent({
     const dataCount = computed(() => {
       return store.getters['system/dataCount'](props.pageName)
     })
-    console.log(tableData.value);
+    console.log(tableData.value)
 
     //处理非公共的插槽，eg：image
     const otherPropSlots = props.contentTableConfig.tableColumn.filter((item: any) => {
@@ -106,10 +115,9 @@ export default defineComponent({
       return true
     })
 
-
     //处理选择按钮
     const handleSelection = function (value: any) {
-      console.log(value);//拿到 数据在编辑删除时使用
+      console.log(value) //拿到 数据在编辑删除时使用
     }
     //删除按钮
     const handleDeleteClick = (value: any) => {
@@ -120,6 +128,8 @@ export default defineComponent({
     }
     //编辑按钮
     const handleEditClick = (value: any) => {
+      console.log('123');
+
       emit('handleEditClick', value)
     }
     //新建按钮
@@ -133,7 +143,9 @@ export default defineComponent({
       dataCount,
       pageData,
       otherPropSlots,
-      isCreate, isUpdate, isDelete,
+      isCreate,
+      isUpdate,
+      isDelete,
       handleDeleteClick,
       handleEditClick,
       handleNewClick
@@ -148,13 +160,15 @@ export default defineComponent({
   /* height: 100%;  这个100%一加达不到效果，不加完美达到内容多大，就撑多大*/
   border-radius: 10px;
   background-color: #ffffff;
-
-
 }
 
 .btn-edit-delete {
   display: flex;
   justify-content: space-evenly;
   align-items: center;
+}
+
+.el-image {
+  z-index: 999;
 }
 </style>

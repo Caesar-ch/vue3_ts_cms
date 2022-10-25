@@ -8,7 +8,7 @@ export interface Iformitem {
   rules?: any[]
   options?: any
   otheroptions?: any
-  isHidden?: Boolean
+  isHidden?: boolean
 }
 export interface Iform {
   formItems: Iformitem[]

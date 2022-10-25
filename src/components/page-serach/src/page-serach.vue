@@ -7,7 +7,9 @@
       <template #footer>
         <div class="handle-btns">
           <el-button @click="handleRestSearchData"><i class="el-icon-refresh"></i> 重置</el-button>
-          <el-button type="primary" @click="handleQuerySelect"> <i class="el-icon-search"></i> 搜索</el-button>
+          <el-button type="primary" @click="handleQuerySelect">
+            <i class="el-icon-search"></i> 搜索</el-button
+          >
         </div>
       </template>
     </chform>
@@ -26,7 +28,7 @@ export default defineComponent({
     searchFormConfig: {
       type: Object,
       reuqired: true
-    },
+    }
   },
   emits: ['handleResetClick', 'handleQueryClick'],
   setup(props, { emit }) {
@@ -44,7 +46,7 @@ export default defineComponent({
     }
     //查询按钮
     const handleQuerySelect = () => {
-      console.log(formdata.value);
+      console.log(formdata.value)
 
       emit('handleQueryClick', formdata.value)
     }

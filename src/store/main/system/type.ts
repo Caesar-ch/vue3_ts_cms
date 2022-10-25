@@ -2,11 +2,15 @@ export interface ISystemState {
   usersList: []
   usersCount: number
   roleList: []
-  roleCount: Number
+  roleCount: number
   goodsList: []
-  goodsCount: Number
+  goodsCount: number
   menuList: []
-  menuCount: Number
+  menuCount: number
   storyList: []
-  storyCount: Number
+  storyCount: number
+  departmentList: []
+  departmentCount: number
+  categoryList: []
+  categoryCount: number
 }

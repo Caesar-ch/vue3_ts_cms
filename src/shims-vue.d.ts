@@ -5,7 +5,7 @@ declare module '*.vue' {
   const component: DefineComponent<{}, {}, any>
   export default component
 }
-declare let App: App
+declare const App: App
 declare module '*.json' {
   const value: any
   export default value

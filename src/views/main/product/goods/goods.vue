@@ -5,7 +5,7 @@
         <el-image style="width: 60px; height: 60px" :src="scope.row.imgUrl" :preview-src-list="[scope.row.imgUrl]" />
       </template>
       <template #newPrice="scope">
-        {{ '￥' + scope.row.newPrice}}
+        {{ '￥' + scope.row.newPrice }}
       </template>
     </PageContent>
   </div>
@@ -28,5 +28,7 @@ export default defineComponent({
 </script>
 
 <style scoped>
-
+.el-image {
+  z-index: 999;
+}
 </style>

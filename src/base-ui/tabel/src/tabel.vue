@@ -1,10 +1,9 @@
 <template>
   <div class="chTabel">
-
     <div class="header">
       <slot name="header">
         <div class="tittle">
-          <h2>{{tittle}}</h2>
+          <h2>{{ tittle }}</h2>
         </div>
         <div class="handler">
           <slot name="handler">
@@ -14,14 +13,31 @@
       </slot>
     </div>
 
-    <el-table :data="tableData" border style="width: 100%" @selection-change="handleSelect" v-bind="childrenProps">
-      <el-table-column v-if="showSelectColumn" type="selection" align="center" min-width="30px"></el-table-column>
-      <el-table-column v-if="showIndexColumn" type="index" label="序号" align="center" min-width="30px"></el-table-column>
+    <el-table
+      :data="tableData"
+      border
+      style="width: 100%"
+      @selection-change="handleSelect"
+      v-bind="childrenProps"
+    >
+      <el-table-column
+        v-if="showSelectColumn"
+        type="selection"
+        align="center"
+        min-width="30px"
+      ></el-table-column>
+      <el-table-column
+        v-if="showIndexColumn"
+        type="index"
+        label="序号"
+        align="center"
+        min-width="30px"
+      ></el-table-column>
       <template v-for="item in tableColumn" :key="item.label">
         <el-table-column v-bind="item" align="center" show-overflow-tooltip>
           <template #default="scope">
             <slot :name="item.slotName" :row="scope.row">
-              {{scope.row[item.prop]}}
+              {{ scope.row[item.prop] }}
             </slot>
           </template>
         </el-table-column>
@@ -30,12 +46,17 @@
 
     <div class="footer">
       <slot name="footer" v-if="showFooter">
-        <el-pagination :currentPage="page.currentPage" :page-size="page.pageSize" :page-sizes="[10, 20, 30, 40]"
-          layout="total, sizes, prev, pager, next, jumper" :total="dataCount" @size-change="handleSizeChange"
-          @current-change="handleCurrentChange" />
+        <el-pagination
+          :currentPage="page.currentPage"
+          :page-size="page.pageSize"
+          :page-sizes="[10, 20, 30, 40]"
+          layout="total, sizes, prev, pager, next, jumper"
+          :total="dataCount"
+          @size-change="handleSizeChange"
+          @current-change="handleCurrentChange"
+        />
       </slot>
     </div>
-
   </div>
 </template>
 
@@ -88,12 +109,11 @@ export default defineComponent({
     }
 
     const handleSizeChange = (value: any) => {
-      console.log(value);
+      console.log(value)
 
       emit('update:page', { ...props.page, pageSize: value })
     }
     const handleCurrentChange = (value: any) => {
-
       emit('update:page', { ...props.page, currentPage: value })
     }
     return {

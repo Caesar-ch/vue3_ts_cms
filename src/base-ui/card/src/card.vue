@@ -3,7 +3,7 @@
     <el-card class="box-card">
       <template #header>
         <div class="card-header">
-          <strong>{{tittle}} </strong>
+          <strong>{{ tittle }} </strong>
         </div>
       </template>
       <div class="content">
@@ -24,13 +24,13 @@ export default defineComponent({
     }
   },
   setup() {
-
-
     return {}
   }
 })
 </script>
 
 <style scoped>
-
+.el-card {
+  margin-bottom: 5px;
+}
 </style>

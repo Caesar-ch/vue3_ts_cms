@@ -12,6 +12,29 @@ module.exports = defineConfig({
         resolvers: [ElementPlusResolver()]
       })
     ]
-  },
-  transpileDependencies: true
+  }
+  // devServer: {
+  // proxy: {
+  //   '/api': {
+  //     target: 'http://pcapi-xiaotuxian-front-devtest.itheima.net/',
+  //     pathRewrite: {
+  //       '^/api': ''
+  //     },
+  //     changeOrigin: true
+  //   }
+  // }
+  // proxy: 'http://pcapi-xiaotuxian-front-devtest.itheima.net/'
+  // }
+  // devServer: {
+  //   proxy: {
+  //     '^/api': {
+  //       target: 'http://152.136.185.210:4000',
+  //       pathRewrite: {
+  //         '^/api': ''
+  //       },
+  //       changeOrigin: true
+  //     }
+  //   }
+  // }
+  // transpileDependencies: true
 })

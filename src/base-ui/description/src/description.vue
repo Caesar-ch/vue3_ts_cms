@@ -3,7 +3,7 @@
     <el-descriptions :title="tittle" :column="column" border>
       <template v-for="item in descriptionList" :key="item.name">
         <el-descriptions-item :label="item.name" label-align="left" align="center">
-          <el-tag size="small">{{item.description}}</el-tag>
+          <el-tag size="small">{{ item.description }}</el-tag>
         </el-descriptions-item>
       </template>
     </el-descriptions>
@@ -29,8 +29,6 @@ export default defineComponent({
     }
   },
   setup() {
-
-
     return {}
   }
 })

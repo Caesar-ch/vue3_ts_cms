@@ -8,7 +8,7 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue'
-import pageContent from "@/components/page-content"
+import pageContent from '@/components/page-content'
 import { contentTableConfig } from './config/contentTabelConfig'
 export default defineComponent({
   components: {
@@ -22,6 +22,4 @@ export default defineComponent({
 })
 </script>
 
-<style scoped>
-
-</style>
+<style scoped></style>

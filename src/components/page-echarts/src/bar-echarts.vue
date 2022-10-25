@@ -18,7 +18,7 @@ export default defineComponent({
     }
   },
   setup(props) {
-    console.log(props.data);
+    console.log(props.data)
 
     const option = computed(() => {
       return {
@@ -45,7 +45,7 @@ export default defineComponent({
             }
           }
         ]
-      };
+      }
     })
 
     return {
@@ -55,6 +55,4 @@ export default defineComponent({
 })
 </script>
 
-<style scoped>
-
-</style>
+<style scoped></style>

@@ -1,11 +1,9 @@
 <template>
-
   <div class="app">
     <elConfigProvider :locale="local">
       <router-view></router-view>
     </elConfigProvider>
   </div>
-
 </template>
 
 <script lang="ts">

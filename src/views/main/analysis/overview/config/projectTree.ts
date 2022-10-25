@@ -353,6 +353,6 @@ vue3_ts_cms
             │  NotFound.vue
             │
             └─src
-`;
+`
 
-export default tree;
+export default tree

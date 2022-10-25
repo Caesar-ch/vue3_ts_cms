@@ -10,7 +10,7 @@
         <label for="password">密码:</label>
         <input type="password" id="password" v-model="account.password">
       </div> -->
-      <el-form label-width="60px" :model='account' :rules="rules">
+      <el-form label-width="60px" :model="account" :rules="rules">
         <el-form-item label="账号" prop="name">
           <el-input v-model="account.name" maxlength="200px"></el-input>
         </el-form-item>
@@ -19,12 +19,10 @@
         </el-form-item>
       </el-form>
       <div class="save-password">
-        <!-- <input type="checkbox" id="save" v-model="isKeepPassword"> <label for="save">记住密码</label> -->
         <el-checkbox v-model="isKeepPassword" label="记住密码" size="large" />
       </div>
       <button class="account-login-btn" @click="handleLoginClick">登陆</button>
     </span>
-
   </div>
 </template>
 
@@ -80,7 +78,6 @@ export default defineComponent({
   justify-content: center;
   align-items: center;
 
-
   .el-form {
     padding: 0 20px;
   }
@@ -104,46 +101,12 @@ export default defineComponent({
       padding: 20px 10px;
     }
 
-    // label {
-    //   display: inline-block;
-    //   width: 60px;
-    //   text-align: right;
-    //   height: 24px;
-    //   font-size: 14px;
-    //   font-weight: 800;
-
-    // }
-
-    // input {
-    //   border: 0.5px solid;
-    //   border-radius: 4px;
-    //   height: 24px;
-    //   padding: 0;
-    //   line-height: 24px;
-    // }
-
     .save-password {
       padding: 0 80px;
-      // height: 26px;
-      // line-height: 26px;
-      // border: 1px solid red;
       margin-top: 10px;
       display: flex;
       justify-content: space-between;
-      // label {
-      //   // display: inline-block;
-      //   // height: 10px;
       vertical-align: middle;
-      //   // font-size: small;
-      //   // border: 1px solid red;
-      // }
-
-      // input {
-      //   width: 16px;
-      //   height: 16px;
-      //   vertical-align: middle;
-      //   padding: 0;
-      // }
     }
 
     .account-login-btn {

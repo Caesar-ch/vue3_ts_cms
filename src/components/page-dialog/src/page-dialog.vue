@@ -1,6 +1,5 @@
 <template>
   <div class="pageDialog">
-
     <el-dialog v-model="dialogVisible" title="新建用户" width="30%" center destroy-on-close>
       <template #default>
         <ChForm v-bind="dialogFormConfig" v-model="formData"></ChForm>
@@ -41,17 +40,18 @@ export default defineComponent({
       type: Object,
       default: () => ({})
     }
-
   },
   setup(props) {
     const dialogVisible = ref(false)
-    const formData = ref<any>({
-    })
-    watch(() => props.defaultInfo, (newValue) => {
-      for (const item of props.dialogFormConfig.formItems) {
-        formData.value[`${item.field}`] = newValue[`${item.field}`]
+    const formData = ref<any>({})
+    watch(
+      () => props.defaultInfo,
+      (newValue) => {
+        for (const item of props.dialogFormConfig.formItems) {
+          formData.value[`${item.field}`] = newValue[`${item.field}`]
+        }
       }
-    })
+    )
     const store = useStore()
     const handleConfirmClick = () => {
       dialogVisible.value = false
@@ -67,11 +67,9 @@ export default defineComponent({
         dialogVisible.value = false
         store.dispatch('system/createNewDataAction', {
           pageName: props.pageName,
-          newData: { ...formData.value, ...props.othersInfo },
+          newData: { ...formData.value, ...props.othersInfo }
         })
       }
-
-
     }
     return {
       dialogVisible,
@@ -82,6 +80,4 @@ export default defineComponent({
 })
 </script>
 
-<style scoped>
-
-</style>
+<style scoped></style>

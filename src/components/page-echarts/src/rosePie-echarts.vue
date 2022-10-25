@@ -48,7 +48,7 @@ export default defineComponent({
             data: props.data
           }
         ]
-      };
+      }
     })
 
     return {
@@ -58,6 +58,4 @@ export default defineComponent({
 })
 </script>
 
-<style scoped>
-
-</style>
+<style scoped></style>

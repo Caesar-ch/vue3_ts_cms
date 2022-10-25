@@ -1,10 +1,15 @@
 <template>
-
   <div class="chbytemd">
-    <Editor class="editos" :value="value" :locale='zhHans' @change="handleChange" :plugins="plugins" previewDebounce="0"
-      :placeholder="'书写...'" />
+    <Editor
+      class="editos"
+      :value="value"
+      :locale="zhHans"
+      @change="handleChange"
+      :plugins="plugins"
+      previewDebounce="0"
+      :placeholder="'书写...'"
+    />
   </div>
-
 </template>
 
 <script lang="ts">
@@ -14,13 +19,10 @@ import gfm from '@bytemd/plugin-gfm'
 import highlight from '@bytemd/plugin-highlight'
 import 'bytemd/dist/index.css'
 import zhHans from 'bytemd/locales/zh_Hans.json'
-const plugins = [
-  gfm(),
-  highlight()
-]
+const plugins = [gfm(), highlight()]
 export default defineComponent({
   components: {
-    Editor: require('@bytemd/vue-next').Editor,
+    Editor: require('@bytemd/vue-next').Editor
   },
   setup() {
     let value = ref('')

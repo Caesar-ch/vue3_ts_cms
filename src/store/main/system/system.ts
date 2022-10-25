@@ -20,7 +20,11 @@ const SystemModule: Module<ISystemState, IRootState> = {
       menuList: [],
       menuCount: 0,
       storyList: [],
-      storyCount: 0
+      storyCount: 0,
+      departmentList: [],
+      departmentCount: 0,
+      categoryList: [],
+      categoryCount: 0
     }
   },
   mutations: {
@@ -53,12 +57,22 @@ const SystemModule: Module<ISystemState, IRootState> = {
     },
     changeStoryCount(state, count) {
       state.storyCount = count
+    },
+    changeDepartmentList(state, departmentList) {
+      state.departmentList = departmentList
+    },
+    changeDepartmentCount(state, count) {
+      state.departmentCount = count
+    },
+    changeCategoryList(state, departmentList) {
+      state.categoryList = departmentList
+    },
+    changeCategoryCount(state, count) {
+      state.categoryCount = count
     }
   },
   actions: {
     async getPageListAction({ commit }, payload: any) {
-      console.log('store')
-
       //1.获取pageUrl
       const pageName = payload.pageName
       //如果规范则能拼出来Url
@@ -84,8 +98,7 @@ const SystemModule: Module<ISystemState, IRootState> = {
       //2.发送请求
       const pageResult = await getPageListData(pageUrl, payload.queryInfo)
       const { list, totalCount } = pageResult.data
-      console.log(list)
-
+      console.log(pageResult.data)
       //3.保存数据
       const changePageName = pageName.slice(0, 1).toUpperCase() + pageName.slice(1)
       commit(`change${changePageName}List`, list)

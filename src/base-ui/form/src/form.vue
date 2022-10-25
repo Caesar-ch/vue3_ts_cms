@@ -6,26 +6,44 @@
     <el-form :label-width="labelWidth">
       <el-row>
         <template v-for="item in formItems" :key="item.label">
-          <el-col v-bind=" colLayout ">
+          <el-col v-bind="colLayout">
             <el-form-item :label="item.label" :style="itemLayout" v-if="!item.isHidden">
               <template v-if="item.type === 'input'">
-                <el-input :placeholder="item.placeholder" :model-value="modelValue[item.field]"
-                  @update:modelValue="handleValueChange($event,item.field)"></el-input>
+                <el-input
+                  :placeholder="item.placeholder"
+                  :model-value="modelValue[item.field]"
+                  @update:modelValue="handleValueChange($event, item.field)"
+                ></el-input>
               </template>
               <template v-else-if="item.type === 'password'">
-                <el-input :placeholder="item.placeholder" :model-value="modelValue[item.field]"
-                  @update:modelValue="handleValueChange($event,item.field)"></el-input>
+                <el-input
+                  :placeholder="item.placeholder"
+                  :model-value="modelValue[item.field]"
+                  @update:modelValue="handleValueChange($event, item.field)"
+                ></el-input>
               </template>
               <template v-else-if="item.type === 'select'">
-                <el-select :placeholder="item.placeholder" style="width:100%" :model-value="modelValue[item.field]"
-                  @update:modelValue="handleValueChange($event,item.field)">
-                  <el-option v-for="option in item.options" :value="option.value" :key="option.value">{{option.tittle}}
+                <el-select
+                  :placeholder="item.placeholder"
+                  style="width: 100%"
+                  :model-value="modelValue[item.field]"
+                  @update:modelValue="handleValueChange($event, item.field)"
+                >
+                  <el-option
+                    v-for="option in item.options"
+                    :value="option.value"
+                    :key="option.value"
+                    >{{ option.tittle }}
                   </el-option>
                 </el-select>
               </template>
               <template v-else-if="item.type === 'datepicker'">
-                <el-date-picker style="width: 100%" v-bind="item.otheroptions" :model-value="modelValue[item.field]"
-                  @update:modelValue="handleValueChange($event,item.field)">
+                <el-date-picker
+                  style="width: 100%"
+                  v-bind="item.otheroptions"
+                  :model-value="modelValue[item.field]"
+                  @update:modelValue="handleValueChange($event, item.field)"
+                >
                 </el-date-picker>
               </template>
             </el-form-item>

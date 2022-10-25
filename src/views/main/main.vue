@@ -1,21 +1,19 @@
 <template>
   <div class="main">
     <el-container class="main-content">
-      <el-aside class="aside" :style="iscollapse?'width:60px':'width:210px'">
-        <aside-Menu :collapse="iscollapse"></aside-Menu>
+      <el-aside class="aside" :style="iscollapse ? 'width:60px' : 'width:210px'">
+        <Aside-Menu :collapse="iscollapse"></Aside-Menu>
       </el-aside>
       <el-container class="page">
         <el-header class="nav-header">
           <navheader @foldChange="handleFoldChange"></navheader>
         </el-header>
         <el-main>
-
-          <router-view v-slot="{Component}">
+          <router-view v-slot="{ Component }">
             <keep-alive include="chat">
               <component :is="Component"></component>
             </keep-alive>
           </router-view>
-
         </el-main>
       </el-container>
     </el-container>
